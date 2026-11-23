@@ -1,4 +1,4 @@
-// tiny-stack-vm-01: run each /input/<id>/program.bin on its input.bin and write /output/<id>/stdout.bin and exit.txt.
+// tiny-stack-vm-01: run /input/<id>/program.bin on input.bin, write /output/<id>/stdout.bin + exit.txt.
 import{mkdirSync,readFileSync,readdirSync,writeFileSync}from'node:fs';
 const I=process.env.MAKEFUN_INPUT_DIR??'/input',O=process.env.MAKEFUN_OUTPUT_DIR??'/output';
 const T=`!2b%'+,0        *******&***&*** ***             AEEA!           &)              %%"%"`;
@@ -45,7 +45,7 @@ case 82:D[sp++]=ip<Q.length?Q[ip++]:-1;break;
 case 83:return E(D[--sp]&255);
 default:{
 const b=D[--sp],a=D[sp-1];
-let r=0;
+let r;
 switch(op){
 case 16:r=a+b|0;break;
 case 17:r=a-b|0;break;
